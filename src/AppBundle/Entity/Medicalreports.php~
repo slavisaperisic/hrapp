@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicalreports
+ *
+ * @ORM\Table(name="MedicalReports", indexes={@ORM\Index(name="TransEvID", columns={"TransEvID"})})
+ * @ORM\Entity
+ */
+class Medicalreports
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransEvID", type="integer", nullable=false)
+     */
+    private $transevid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="MedRepID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $medrepid;
+
+
+
+    /**
+     * Set transevid
+     *
+     * @param integer $transevid
+     *
+     * @return Medicalreports
+     */
+    public function setTransevid($transevid)
+    {
+        $this->transevid = $transevid;
+
+        return $this;
+    }
+
+    /**
+     * Get transevid
+     *
+     * @return integer
+     */
+    public function getTransevid()
+    {
+        return $this->transevid;
+    }
+
+    /**
+     * Get medrepid
+     *
+     * @return integer
+     */
+    public function getMedrepid()
+    {
+        return $this->medrepid;
+    }
+}

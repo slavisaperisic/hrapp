@@ -1,0 +1,128 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Crew
+ *
+ * @ORM\Table(name="Crew", uniqueConstraints={@ORM\UniqueConstraint(name="CrewName", columns={"CrewName"})})
+ * @ORM\Entity
+ */
+class Crew
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CrewNbr", type="smallint", nullable=false)
+     */
+    private $crewnbr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CrewName", type="string", length=50, nullable=false)
+     */
+    private $crewname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CrewDesc", type="string", length=100, nullable=true)
+     */
+    private $crewdesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CrewID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $crewid;
+
+
+
+    /**
+     * Set crewnbr
+     *
+     * @param integer $crewnbr
+     *
+     * @return Crew
+     */
+    public function setCrewnbr($crewnbr)
+    {
+        $this->crewnbr = $crewnbr;
+
+        return $this;
+    }
+
+    /**
+     * Get crewnbr
+     *
+     * @return integer
+     */
+    public function getCrewnbr()
+    {
+        return $this->crewnbr;
+    }
+
+    /**
+     * Set crewname
+     *
+     * @param string $crewname
+     *
+     * @return Crew
+     */
+    public function setCrewname($crewname)
+    {
+        $this->crewname = $crewname;
+
+        return $this;
+    }
+
+    /**
+     * Get crewname
+     *
+     * @return string
+     */
+    public function getCrewname()
+    {
+        return $this->crewname;
+    }
+
+    /**
+     * Set crewdesc
+     *
+     * @param string $crewdesc
+     *
+     * @return Crew
+     */
+    public function setCrewdesc($crewdesc)
+    {
+        $this->crewdesc = $crewdesc;
+
+        return $this;
+    }
+
+    /**
+     * Get crewdesc
+     *
+     * @return string
+     */
+    public function getCrewdesc()
+    {
+        return $this->crewdesc;
+    }
+
+    /**
+     * Get crewid
+     *
+     * @return integer
+     */
+    public function getCrewid()
+    {
+        return $this->crewid;
+    }
+}

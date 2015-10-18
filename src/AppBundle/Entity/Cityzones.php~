@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cityzones
+ *
+ * @ORM\Table(name="CityZones", uniqueConstraints={@ORM\UniqueConstraint(name="CityZoneNbr", columns={"CityZoneNbr"}), @ORM\UniqueConstraint(name="CityZoneName", columns={"CityZoneName"})})
+ * @ORM\Entity
+ */
+class Cityzones
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CityZoneNbr", type="smallint", nullable=false)
+     */
+    private $cityzonenbr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CityZoneName", type="string", length=30, nullable=false)
+     */
+    private $cityzonename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CityZoneID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cityzoneid;
+
+
+
+    /**
+     * Set cityzonenbr
+     *
+     * @param integer $cityzonenbr
+     *
+     * @return Cityzones
+     */
+    public function setCityzonenbr($cityzonenbr)
+    {
+        $this->cityzonenbr = $cityzonenbr;
+
+        return $this;
+    }
+
+    /**
+     * Get cityzonenbr
+     *
+     * @return integer
+     */
+    public function getCityzonenbr()
+    {
+        return $this->cityzonenbr;
+    }
+
+    /**
+     * Set cityzonename
+     *
+     * @param string $cityzonename
+     *
+     * @return Cityzones
+     */
+    public function setCityzonename($cityzonename)
+    {
+        $this->cityzonename = $cityzonename;
+
+        return $this;
+    }
+
+    /**
+     * Get cityzonename
+     *
+     * @return string
+     */
+    public function getCityzonename()
+    {
+        return $this->cityzonename;
+    }
+
+    /**
+     * Get cityzoneid
+     *
+     * @return integer
+     */
+    public function getCityzoneid()
+    {
+        return $this->cityzoneid;
+    }
+}

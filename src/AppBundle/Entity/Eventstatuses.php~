@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Eventstatuses
+ *
+ * @ORM\Table(name="EventStatuses", indexes={@ORM\Index(name="EvStatTypeID", columns={"EvStatTypeID"}), @ORM\Index(name="EventID", columns={"EventID"})})
+ * @ORM\Entity
+ */
+class Eventstatuses
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EventID", type="integer", nullable=false)
+     */
+    private $eventid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EvStatTypeID", type="integer", nullable=false)
+     */
+    private $evstattypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EvStatID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $evstatid;
+
+
+
+    /**
+     * Set eventid
+     *
+     * @param integer $eventid
+     *
+     * @return Eventstatuses
+     */
+    public function setEventid($eventid)
+    {
+        $this->eventid = $eventid;
+
+        return $this;
+    }
+
+    /**
+     * Get eventid
+     *
+     * @return integer
+     */
+    public function getEventid()
+    {
+        return $this->eventid;
+    }
+
+    /**
+     * Set evstattypeid
+     *
+     * @param integer $evstattypeid
+     *
+     * @return Eventstatuses
+     */
+    public function setEvstattypeid($evstattypeid)
+    {
+        $this->evstattypeid = $evstattypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get evstattypeid
+     *
+     * @return integer
+     */
+    public function getEvstattypeid()
+    {
+        return $this->evstattypeid;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Eventstatuses
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Eventstatuses
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get evstatid
+     *
+     * @return integer
+     */
+    public function getEvstatid()
+    {
+        return $this->evstatid;
+    }
+}

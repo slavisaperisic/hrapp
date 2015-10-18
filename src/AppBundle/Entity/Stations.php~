@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Stations
+ *
+ * @ORM\Table(name="Stations", uniqueConstraints={@ORM\UniqueConstraint(name="StationName", columns={"StationName"})}, indexes={@ORM\Index(name="CityZoneID", columns={"CityZoneID"})})
+ * @ORM\Entity
+ */
+class Stations
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="StationName", type="string", length=30, nullable=false)
+     */
+    private $stationname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CityZoneID", type="integer", nullable=false)
+     */
+    private $cityzoneid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StationID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $stationid;
+
+
+
+    /**
+     * Set stationname
+     *
+     * @param string $stationname
+     *
+     * @return Stations
+     */
+    public function setStationname($stationname)
+    {
+        $this->stationname = $stationname;
+
+        return $this;
+    }
+
+    /**
+     * Get stationname
+     *
+     * @return string
+     */
+    public function getStationname()
+    {
+        return $this->stationname;
+    }
+
+    /**
+     * Set cityzoneid
+     *
+     * @param integer $cityzoneid
+     *
+     * @return Stations
+     */
+    public function setCityzoneid($cityzoneid)
+    {
+        $this->cityzoneid = $cityzoneid;
+
+        return $this;
+    }
+
+    /**
+     * Get cityzoneid
+     *
+     * @return integer
+     */
+    public function getCityzoneid()
+    {
+        return $this->cityzoneid;
+    }
+
+    /**
+     * Get stationid
+     *
+     * @return integer
+     */
+    public function getStationid()
+    {
+        return $this->stationid;
+    }
+}

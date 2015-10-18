@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Busentityroles
+ *
+ * @ORM\Table(name="BusEntityRoles")
+ * @ORM\Entity
+ */
+class Busentityroles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="BusEntID", type="integer", nullable=false)
+     */
+    private $busentid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="BusEntRoleTypeID", type="integer", nullable=false)
+     */
+    private $busentroletypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="BusEntRoleID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $busentroleid;
+
+
+
+    /**
+     * Set busentid
+     *
+     * @param integer $busentid
+     *
+     * @return Busentityroles
+     */
+    public function setBusentid($busentid)
+    {
+        $this->busentid = $busentid;
+
+        return $this;
+    }
+
+    /**
+     * Get busentid
+     *
+     * @return integer
+     */
+    public function getBusentid()
+    {
+        return $this->busentid;
+    }
+
+    /**
+     * Set busentroletypeid
+     *
+     * @param integer $busentroletypeid
+     *
+     * @return Busentityroles
+     */
+    public function setBusentroletypeid($busentroletypeid)
+    {
+        $this->busentroletypeid = $busentroletypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get busentroletypeid
+     *
+     * @return integer
+     */
+    public function getBusentroletypeid()
+    {
+        return $this->busentroletypeid;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Busentityroles
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Busentityroles
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get busentroleid
+     *
+     * @return integer
+     */
+    public function getBusentroleid()
+    {
+        return $this->busentroleid;
+    }
+}

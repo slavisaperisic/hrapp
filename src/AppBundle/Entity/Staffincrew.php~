@@ -1,0 +1,221 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staffincrew
+ *
+ * @ORM\Table(name="StaffInCrew", indexes={@ORM\Index(name="PlanedTrUnRoleID", columns={"PlanedTrUnRoleID"})})
+ * @ORM\Entity
+ */
+class Staffincrew
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CrewID", type="integer", nullable=false)
+     */
+    private $crewid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffRoleID", type="integer", nullable=false)
+     */
+    private $staffroleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PlanedTrUnRoleID", type="integer", nullable=false)
+     */
+    private $planedtrunroleid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Leader", type="string", length=1, nullable=false)
+     */
+    private $leader;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffCrewID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $staffcrewid;
+
+
+
+    /**
+     * Set crewid
+     *
+     * @param integer $crewid
+     *
+     * @return Staffincrew
+     */
+    public function setCrewid($crewid)
+    {
+        $this->crewid = $crewid;
+
+        return $this;
+    }
+
+    /**
+     * Get crewid
+     *
+     * @return integer
+     */
+    public function getCrewid()
+    {
+        return $this->crewid;
+    }
+
+    /**
+     * Set staffroleid
+     *
+     * @param integer $staffroleid
+     *
+     * @return Staffincrew
+     */
+    public function setStaffroleid($staffroleid)
+    {
+        $this->staffroleid = $staffroleid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffroleid
+     *
+     * @return integer
+     */
+    public function getStaffroleid()
+    {
+        return $this->staffroleid;
+    }
+
+    /**
+     * Set planedtrunroleid
+     *
+     * @param integer $planedtrunroleid
+     *
+     * @return Staffincrew
+     */
+    public function setPlanedtrunroleid($planedtrunroleid)
+    {
+        $this->planedtrunroleid = $planedtrunroleid;
+
+        return $this;
+    }
+
+    /**
+     * Get planedtrunroleid
+     *
+     * @return integer
+     */
+    public function getPlanedtrunroleid()
+    {
+        return $this->planedtrunroleid;
+    }
+
+    /**
+     * Set leader
+     *
+     * @param string $leader
+     *
+     * @return Staffincrew
+     */
+    public function setLeader($leader)
+    {
+        $this->leader = $leader;
+
+        return $this;
+    }
+
+    /**
+     * Get leader
+     *
+     * @return string
+     */
+    public function getLeader()
+    {
+        return $this->leader;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Staffincrew
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Staffincrew
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get staffcrewid
+     *
+     * @return integer
+     */
+    public function getStaffcrewid()
+    {
+        return $this->staffcrewid;
+    }
+}

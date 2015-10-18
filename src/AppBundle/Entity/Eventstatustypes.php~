@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Eventstatustypes
+ *
+ * @ORM\Table(name="EventStatusTypes", uniqueConstraints={@ORM\UniqueConstraint(name="EvStatTypeName", columns={"EvStatTypeName"})})
+ * @ORM\Entity
+ */
+class Eventstatustypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EvStatTypeName", type="string", length=30, nullable=false)
+     */
+    private $evstattypename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EvStatTypeDesc", type="string", length=255, nullable=true)
+     */
+    private $evstattypedesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EvStatTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $evstattypeid;
+
+
+
+    /**
+     * Set evstattypename
+     *
+     * @param string $evstattypename
+     *
+     * @return Eventstatustypes
+     */
+    public function setEvstattypename($evstattypename)
+    {
+        $this->evstattypename = $evstattypename;
+
+        return $this;
+    }
+
+    /**
+     * Get evstattypename
+     *
+     * @return string
+     */
+    public function getEvstattypename()
+    {
+        return $this->evstattypename;
+    }
+
+    /**
+     * Set evstattypedesc
+     *
+     * @param string $evstattypedesc
+     *
+     * @return Eventstatustypes
+     */
+    public function setEvstattypedesc($evstattypedesc)
+    {
+        $this->evstattypedesc = $evstattypedesc;
+
+        return $this;
+    }
+
+    /**
+     * Get evstattypedesc
+     *
+     * @return string
+     */
+    public function getEvstattypedesc()
+    {
+        return $this->evstattypedesc;
+    }
+
+    /**
+     * Get evstattypeid
+     *
+     * @return integer
+     */
+    public function getEvstattypeid()
+    {
+        return $this->evstattypeid;
+    }
+}

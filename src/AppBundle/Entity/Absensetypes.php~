@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Absensetypes
+ *
+ * @ORM\Table(name="AbsenseTypes", uniqueConstraints={@ORM\UniqueConstraint(name="AbsTypeName", columns={"AbsTypeName"})})
+ * @ORM\Entity
+ */
+class Absensetypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AbsTypeName", type="string", length=30, nullable=false)
+     */
+    private $abstypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AbsTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $abstypeid;
+
+
+
+    /**
+     * Set abstypename
+     *
+     * @param string $abstypename
+     *
+     * @return Absensetypes
+     */
+    public function setAbstypename($abstypename)
+    {
+        $this->abstypename = $abstypename;
+
+        return $this;
+    }
+
+    /**
+     * Get abstypename
+     *
+     * @return string
+     */
+    public function getAbstypename()
+    {
+        return $this->abstypename;
+    }
+
+    /**
+     * Get abstypeid
+     *
+     * @return integer
+     */
+    public function getAbstypeid()
+    {
+        return $this->abstypeid;
+    }
+}

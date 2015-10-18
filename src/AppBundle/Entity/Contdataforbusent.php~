@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contdataforbusent
+ *
+ * @ORM\Table(name="ContDataForBusEnt", indexes={@ORM\Index(name="BusEntID", columns={"BusEntID"}), @ORM\Index(name="ContDataID", columns={"ContDataID"})})
+ * @ORM\Entity
+ */
+class Contdataforbusent
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="BusEntID", type="integer", nullable=false)
+     */
+    private $busentid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ContDataID", type="integer", nullable=false)
+     */
+    private $contdataid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CDforBEID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cdforbeid;
+
+
+
+    /**
+     * Set busentid
+     *
+     * @param integer $busentid
+     *
+     * @return Contdataforbusent
+     */
+    public function setBusentid($busentid)
+    {
+        $this->busentid = $busentid;
+
+        return $this;
+    }
+
+    /**
+     * Get busentid
+     *
+     * @return integer
+     */
+    public function getBusentid()
+    {
+        return $this->busentid;
+    }
+
+    /**
+     * Set contdataid
+     *
+     * @param integer $contdataid
+     *
+     * @return Contdataforbusent
+     */
+    public function setContdataid($contdataid)
+    {
+        $this->contdataid = $contdataid;
+
+        return $this;
+    }
+
+    /**
+     * Get contdataid
+     *
+     * @return integer
+     */
+    public function getContdataid()
+    {
+        return $this->contdataid;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Contdataforbusent
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Contdataforbusent
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get cdforbeid
+     *
+     * @return integer
+     */
+    public function getCdforbeid()
+    {
+        return $this->cdforbeid;
+    }
+}

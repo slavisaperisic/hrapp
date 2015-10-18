@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transportunits
+ *
+ * @ORM\Table(name="TransportUnits")
+ * @ORM\Entity
+ */
+class Transportunits
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="RegNbr", type="string", length=20, nullable=false)
+     */
+    private $regnbr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TransUnitNbr", type="string", length=20, nullable=true)
+     */
+    private $transunitnbr;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransUnitID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $transunitid;
+
+
+
+    /**
+     * Set regnbr
+     *
+     * @param string $regnbr
+     *
+     * @return Transportunits
+     */
+    public function setRegnbr($regnbr)
+    {
+        $this->regnbr = $regnbr;
+
+        return $this;
+    }
+
+    /**
+     * Get regnbr
+     *
+     * @return string
+     */
+    public function getRegnbr()
+    {
+        return $this->regnbr;
+    }
+
+    /**
+     * Set transunitnbr
+     *
+     * @param string $transunitnbr
+     *
+     * @return Transportunits
+     */
+    public function setTransunitnbr($transunitnbr)
+    {
+        $this->transunitnbr = $transunitnbr;
+
+        return $this;
+    }
+
+    /**
+     * Get transunitnbr
+     *
+     * @return string
+     */
+    public function getTransunitnbr()
+    {
+        return $this->transunitnbr;
+    }
+
+    /**
+     * Get transunitid
+     *
+     * @return integer
+     */
+    public function getTransunitid()
+    {
+        return $this->transunitid;
+    }
+}

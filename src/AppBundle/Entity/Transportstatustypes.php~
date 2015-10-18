@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transportstatustypes
+ *
+ * @ORM\Table(name="TransportStatusTypes", uniqueConstraints={@ORM\UniqueConstraint(name="TSTypeName", columns={"TSTypeName"})})
+ * @ORM\Entity
+ */
+class Transportstatustypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TSTypeName", type="string", length=30, nullable=false)
+     */
+    private $tstypename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TSTypeDesc", type="string", length=255, nullable=true)
+     */
+    private $tstypedesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TSTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $tstypeid;
+
+
+
+    /**
+     * Set tstypename
+     *
+     * @param string $tstypename
+     *
+     * @return Transportstatustypes
+     */
+    public function setTstypename($tstypename)
+    {
+        $this->tstypename = $tstypename;
+
+        return $this;
+    }
+
+    /**
+     * Get tstypename
+     *
+     * @return string
+     */
+    public function getTstypename()
+    {
+        return $this->tstypename;
+    }
+
+    /**
+     * Set tstypedesc
+     *
+     * @param string $tstypedesc
+     *
+     * @return Transportstatustypes
+     */
+    public function setTstypedesc($tstypedesc)
+    {
+        $this->tstypedesc = $tstypedesc;
+
+        return $this;
+    }
+
+    /**
+     * Get tstypedesc
+     *
+     * @return string
+     */
+    public function getTstypedesc()
+    {
+        return $this->tstypedesc;
+    }
+
+    /**
+     * Get tstypeid
+     *
+     * @return integer
+     */
+    public function getTstypeid()
+    {
+        return $this->tstypeid;
+    }
+}

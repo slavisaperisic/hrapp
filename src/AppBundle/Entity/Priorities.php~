@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Priorities
+ *
+ * @ORM\Table(name="Priorities", uniqueConstraints={@ORM\UniqueConstraint(name="PriorityName", columns={"PriorityName"})})
+ * @ORM\Entity
+ */
+class Priorities
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PriorityName", type="string", length=30, nullable=false)
+     */
+    private $priorityname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PriorityID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $priorityid;
+
+
+
+    /**
+     * Set priorityname
+     *
+     * @param string $priorityname
+     *
+     * @return Priorities
+     */
+    public function setPriorityname($priorityname)
+    {
+        $this->priorityname = $priorityname;
+
+        return $this;
+    }
+
+    /**
+     * Get priorityname
+     *
+     * @return string
+     */
+    public function getPriorityname()
+    {
+        return $this->priorityname;
+    }
+
+    /**
+     * Get priorityid
+     *
+     * @return integer
+     */
+    public function getPriorityid()
+    {
+        return $this->priorityid;
+    }
+}

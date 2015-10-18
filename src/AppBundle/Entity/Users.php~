@@ -1,0 +1,283 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="Users", uniqueConstraints={@ORM\UniqueConstraint(name="UserName", columns={"UserName"})})
+ * @ORM\Entity
+ */
+class Users
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer", nullable=false)
+     */
+    private $staffid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UserName", type="string", length=20, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UserPass", type="string", length=20, nullable=false)
+     */
+    private $userpass;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Email", type="string", length=100, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Phone1", type="string", length=20, nullable=true)
+     */
+    private $phone1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Active", type="smallint", nullable=true)
+     */
+    private $active;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="CreateDate", type="date", nullable=true)
+     */
+    private $createdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="LastLogin", type="date", nullable=true)
+     */
+    private $lastlogin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="UserID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $userid;
+
+
+
+    /**
+     * Set staffid
+     *
+     * @param integer $staffid
+     *
+     * @return Users
+     */
+    public function setStaffid($staffid)
+    {
+        $this->staffid = $staffid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return Users
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set userpass
+     *
+     * @param string $userpass
+     *
+     * @return Users
+     */
+    public function setUserpass($userpass)
+    {
+        $this->userpass = $userpass;
+
+        return $this;
+    }
+
+    /**
+     * Get userpass
+     *
+     * @return string
+     */
+    public function getUserpass()
+    {
+        return $this->userpass;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Users
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set phone1
+     *
+     * @param string $phone1
+     *
+     * @return Users
+     */
+    public function setPhone1($phone1)
+    {
+        $this->phone1 = $phone1;
+
+        return $this;
+    }
+
+    /**
+     * Get phone1
+     *
+     * @return string
+     */
+    public function getPhone1()
+    {
+        return $this->phone1;
+    }
+
+    /**
+     * Set active
+     *
+     * @param integer $active
+     *
+     * @return Users
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return integer
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set createdate
+     *
+     * @param \DateTime $createdate
+     *
+     * @return Users
+     */
+    public function setCreatedate($createdate)
+    {
+        $this->createdate = $createdate;
+
+        return $this;
+    }
+
+    /**
+     * Get createdate
+     *
+     * @return \DateTime
+     */
+    public function getCreatedate()
+    {
+        return $this->createdate;
+    }
+
+    /**
+     * Set lastlogin
+     *
+     * @param \DateTime $lastlogin
+     *
+     * @return Users
+     */
+    public function setLastlogin($lastlogin)
+    {
+        $this->lastlogin = $lastlogin;
+
+        return $this;
+    }
+
+    /**
+     * Get lastlogin
+     *
+     * @return \DateTime
+     */
+    public function getLastlogin()
+    {
+        return $this->lastlogin;
+    }
+
+    /**
+     * Get userid
+     *
+     * @return integer
+     */
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+}

@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Absentstaff
+ *
+ * @ORM\Table(name="AbsentStaff", indexes={@ORM\Index(name="StaffID", columns={"StaffID"}), @ORM\Index(name="AbsTypeID", columns={"AbsTypeID"})})
+ * @ORM\Entity
+ */
+class Absentstaff
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer", nullable=false)
+     */
+    private $staffid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AbsTypeID", type="integer", nullable=false)
+     */
+    private $abstypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromTime", type="date", nullable=false)
+     */
+    private $fromtime;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToTime", type="date", nullable=true)
+     */
+    private $totime;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AbsStaffID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $absstaffid;
+
+
+
+    /**
+     * Set staffid
+     *
+     * @param integer $staffid
+     *
+     * @return Absentstaff
+     */
+    public function setStaffid($staffid)
+    {
+        $this->staffid = $staffid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+
+    /**
+     * Set abstypeid
+     *
+     * @param integer $abstypeid
+     *
+     * @return Absentstaff
+     */
+    public function setAbstypeid($abstypeid)
+    {
+        $this->abstypeid = $abstypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get abstypeid
+     *
+     * @return integer
+     */
+    public function getAbstypeid()
+    {
+        return $this->abstypeid;
+    }
+
+    /**
+     * Set fromtime
+     *
+     * @param \DateTime $fromtime
+     *
+     * @return Absentstaff
+     */
+    public function setFromtime($fromtime)
+    {
+        $this->fromtime = $fromtime;
+
+        return $this;
+    }
+
+    /**
+     * Get fromtime
+     *
+     * @return \DateTime
+     */
+    public function getFromtime()
+    {
+        return $this->fromtime;
+    }
+
+    /**
+     * Set totime
+     *
+     * @param \DateTime $totime
+     *
+     * @return Absentstaff
+     */
+    public function setTotime($totime)
+    {
+        $this->totime = $totime;
+
+        return $this;
+    }
+
+    /**
+     * Get totime
+     *
+     * @return \DateTime
+     */
+    public function getTotime()
+    {
+        return $this->totime;
+    }
+
+    /**
+     * Get absstaffid
+     *
+     * @return integer
+     */
+    public function getAbsstaffid()
+    {
+        return $this->absstaffid;
+    }
+}

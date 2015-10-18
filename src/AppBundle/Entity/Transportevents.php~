@@ -1,0 +1,345 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transportevents
+ *
+ * @ORM\Table(name="TransportEvents", uniqueConstraints={@ORM\UniqueConstraint(name="TransEvNbr", columns={"TransEvNbr"})}, indexes={@ORM\Index(name="EventID", columns={"EventID"}), @ORM\Index(name="StaffCrewID", columns={"StaffCrewID"}), @ORM\Index(name="DestinID", columns={"DestinID"}), @ORM\Index(name="DispatcID", columns={"DispatcID"}), @ORM\Index(name="TrUnRoleID", columns={"TrUnRoleID"})})
+ * @ORM\Entity
+ */
+class Transportevents
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TransEvNbr", type="string", length=20, nullable=false)
+     */
+    private $transevnbr;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DispatcID", type="integer", nullable=false)
+     */
+    private $dispatcid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EventID", type="integer", nullable=false)
+     */
+    private $eventid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffCrewID", type="integer", nullable=false)
+     */
+    private $staffcrewid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TrUnRoleID", type="integer", nullable=false)
+     */
+    private $trunroleid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DestinID", type="integer", nullable=true)
+     */
+    private $destinid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ScheduledStart", type="date", nullable=false)
+     */
+    private $scheduledstart;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ScheduledEnd", type="date", nullable=true)
+     */
+    private $scheduledend;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ActualStart", type="date", nullable=false)
+     */
+    private $actualstart;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ActualEnd", type="date", nullable=true)
+     */
+    private $actualend;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransEvID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $transevid;
+
+
+
+    /**
+     * Set transevnbr
+     *
+     * @param string $transevnbr
+     *
+     * @return Transportevents
+     */
+    public function setTransevnbr($transevnbr)
+    {
+        $this->transevnbr = $transevnbr;
+
+        return $this;
+    }
+
+    /**
+     * Get transevnbr
+     *
+     * @return string
+     */
+    public function getTransevnbr()
+    {
+        return $this->transevnbr;
+    }
+
+    /**
+     * Set dispatcid
+     *
+     * @param integer $dispatcid
+     *
+     * @return Transportevents
+     */
+    public function setDispatcid($dispatcid)
+    {
+        $this->dispatcid = $dispatcid;
+
+        return $this;
+    }
+
+    /**
+     * Get dispatcid
+     *
+     * @return integer
+     */
+    public function getDispatcid()
+    {
+        return $this->dispatcid;
+    }
+
+    /**
+     * Set eventid
+     *
+     * @param integer $eventid
+     *
+     * @return Transportevents
+     */
+    public function setEventid($eventid)
+    {
+        $this->eventid = $eventid;
+
+        return $this;
+    }
+
+    /**
+     * Get eventid
+     *
+     * @return integer
+     */
+    public function getEventid()
+    {
+        return $this->eventid;
+    }
+
+    /**
+     * Set staffcrewid
+     *
+     * @param integer $staffcrewid
+     *
+     * @return Transportevents
+     */
+    public function setStaffcrewid($staffcrewid)
+    {
+        $this->staffcrewid = $staffcrewid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffcrewid
+     *
+     * @return integer
+     */
+    public function getStaffcrewid()
+    {
+        return $this->staffcrewid;
+    }
+
+    /**
+     * Set trunroleid
+     *
+     * @param integer $trunroleid
+     *
+     * @return Transportevents
+     */
+    public function setTrunroleid($trunroleid)
+    {
+        $this->trunroleid = $trunroleid;
+
+        return $this;
+    }
+
+    /**
+     * Get trunroleid
+     *
+     * @return integer
+     */
+    public function getTrunroleid()
+    {
+        return $this->trunroleid;
+    }
+
+    /**
+     * Set destinid
+     *
+     * @param integer $destinid
+     *
+     * @return Transportevents
+     */
+    public function setDestinid($destinid)
+    {
+        $this->destinid = $destinid;
+
+        return $this;
+    }
+
+    /**
+     * Get destinid
+     *
+     * @return integer
+     */
+    public function getDestinid()
+    {
+        return $this->destinid;
+    }
+
+    /**
+     * Set scheduledstart
+     *
+     * @param \DateTime $scheduledstart
+     *
+     * @return Transportevents
+     */
+    public function setScheduledstart($scheduledstart)
+    {
+        $this->scheduledstart = $scheduledstart;
+
+        return $this;
+    }
+
+    /**
+     * Get scheduledstart
+     *
+     * @return \DateTime
+     */
+    public function getScheduledstart()
+    {
+        return $this->scheduledstart;
+    }
+
+    /**
+     * Set scheduledend
+     *
+     * @param \DateTime $scheduledend
+     *
+     * @return Transportevents
+     */
+    public function setScheduledend($scheduledend)
+    {
+        $this->scheduledend = $scheduledend;
+
+        return $this;
+    }
+
+    /**
+     * Get scheduledend
+     *
+     * @return \DateTime
+     */
+    public function getScheduledend()
+    {
+        return $this->scheduledend;
+    }
+
+    /**
+     * Set actualstart
+     *
+     * @param \DateTime $actualstart
+     *
+     * @return Transportevents
+     */
+    public function setActualstart($actualstart)
+    {
+        $this->actualstart = $actualstart;
+
+        return $this;
+    }
+
+    /**
+     * Get actualstart
+     *
+     * @return \DateTime
+     */
+    public function getActualstart()
+    {
+        return $this->actualstart;
+    }
+
+    /**
+     * Set actualend
+     *
+     * @param \DateTime $actualend
+     *
+     * @return Transportevents
+     */
+    public function setActualend($actualend)
+    {
+        $this->actualend = $actualend;
+
+        return $this;
+    }
+
+    /**
+     * Get actualend
+     *
+     * @return \DateTime
+     */
+    public function getActualend()
+    {
+        return $this->actualend;
+    }
+
+    /**
+     * Get transevid
+     *
+     * @return integer
+     */
+    public function getTransevid()
+    {
+        return $this->transevid;
+    }
+}

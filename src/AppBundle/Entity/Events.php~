@@ -1,0 +1,407 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Events
+ *
+ * @ORM\Table(name="Events", uniqueConstraints={@ORM\UniqueConstraint(name="EventNbr", columns={"EventNbr"})}, indexes={@ORM\Index(name="CallerID", columns={"CallerID"}), @ORM\Index(name="ExternalID", columns={"ExternalID"}), @ORM\Index(name="PatientID", columns={"PatientID"}), @ORM\Index(name="AgentID", columns={"AgentID"}), @ORM\Index(name="AdvicerID", columns={"AdvicerID"}), @ORM\Index(name="DoctorID", columns={"DoctorID"})})
+ * @ORM\Entity
+ */
+class Events
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EventTypeID", type="integer", nullable=false)
+     */
+    private $eventtypeid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EventNbr", type="string", length=20, nullable=false)
+     */
+    private $eventnbr;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="EventDate", type="date", nullable=true)
+     */
+    private $eventdate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ProblemTypeID", type="integer", nullable=true)
+     */
+    private $problemtypeid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProblemDesc", type="string", length=255, nullable=true)
+     */
+    private $problemdesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PriorityID", type="integer", nullable=true)
+     */
+    private $priorityid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AgentID", type="integer", nullable=false)
+     */
+    private $agentid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DoctorID", type="integer", nullable=true)
+     */
+    private $doctorid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AdvicerID", type="integer", nullable=true)
+     */
+    private $advicerid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ExternalID", type="integer", nullable=true)
+     */
+    private $externalid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="CallerID", type="integer", nullable=false)
+     */
+    private $callerid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PatientID", type="integer", nullable=true)
+     */
+    private $patientid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EventID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $eventid;
+
+
+
+    /**
+     * Set eventtypeid
+     *
+     * @param integer $eventtypeid
+     *
+     * @return Events
+     */
+    public function setEventtypeid($eventtypeid)
+    {
+        $this->eventtypeid = $eventtypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get eventtypeid
+     *
+     * @return integer
+     */
+    public function getEventtypeid()
+    {
+        return $this->eventtypeid;
+    }
+
+    /**
+     * Set eventnbr
+     *
+     * @param string $eventnbr
+     *
+     * @return Events
+     */
+    public function setEventnbr($eventnbr)
+    {
+        $this->eventnbr = $eventnbr;
+
+        return $this;
+    }
+
+    /**
+     * Get eventnbr
+     *
+     * @return string
+     */
+    public function getEventnbr()
+    {
+        return $this->eventnbr;
+    }
+
+    /**
+     * Set eventdate
+     *
+     * @param \DateTime $eventdate
+     *
+     * @return Events
+     */
+    public function setEventdate($eventdate)
+    {
+        $this->eventdate = $eventdate;
+
+        return $this;
+    }
+
+    /**
+     * Get eventdate
+     *
+     * @return \DateTime
+     */
+    public function getEventdate()
+    {
+        return $this->eventdate;
+    }
+
+    /**
+     * Set problemtypeid
+     *
+     * @param integer $problemtypeid
+     *
+     * @return Events
+     */
+    public function setProblemtypeid($problemtypeid)
+    {
+        $this->problemtypeid = $problemtypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get problemtypeid
+     *
+     * @return integer
+     */
+    public function getProblemtypeid()
+    {
+        return $this->problemtypeid;
+    }
+
+    /**
+     * Set problemdesc
+     *
+     * @param string $problemdesc
+     *
+     * @return Events
+     */
+    public function setProblemdesc($problemdesc)
+    {
+        $this->problemdesc = $problemdesc;
+
+        return $this;
+    }
+
+    /**
+     * Get problemdesc
+     *
+     * @return string
+     */
+    public function getProblemdesc()
+    {
+        return $this->problemdesc;
+    }
+
+    /**
+     * Set priorityid
+     *
+     * @param integer $priorityid
+     *
+     * @return Events
+     */
+    public function setPriorityid($priorityid)
+    {
+        $this->priorityid = $priorityid;
+
+        return $this;
+    }
+
+    /**
+     * Get priorityid
+     *
+     * @return integer
+     */
+    public function getPriorityid()
+    {
+        return $this->priorityid;
+    }
+
+    /**
+     * Set agentid
+     *
+     * @param integer $agentid
+     *
+     * @return Events
+     */
+    public function setAgentid($agentid)
+    {
+        $this->agentid = $agentid;
+
+        return $this;
+    }
+
+    /**
+     * Get agentid
+     *
+     * @return integer
+     */
+    public function getAgentid()
+    {
+        return $this->agentid;
+    }
+
+    /**
+     * Set doctorid
+     *
+     * @param integer $doctorid
+     *
+     * @return Events
+     */
+    public function setDoctorid($doctorid)
+    {
+        $this->doctorid = $doctorid;
+
+        return $this;
+    }
+
+    /**
+     * Get doctorid
+     *
+     * @return integer
+     */
+    public function getDoctorid()
+    {
+        return $this->doctorid;
+    }
+
+    /**
+     * Set advicerid
+     *
+     * @param integer $advicerid
+     *
+     * @return Events
+     */
+    public function setAdvicerid($advicerid)
+    {
+        $this->advicerid = $advicerid;
+
+        return $this;
+    }
+
+    /**
+     * Get advicerid
+     *
+     * @return integer
+     */
+    public function getAdvicerid()
+    {
+        return $this->advicerid;
+    }
+
+    /**
+     * Set externalid
+     *
+     * @param integer $externalid
+     *
+     * @return Events
+     */
+    public function setExternalid($externalid)
+    {
+        $this->externalid = $externalid;
+
+        return $this;
+    }
+
+    /**
+     * Get externalid
+     *
+     * @return integer
+     */
+    public function getExternalid()
+    {
+        return $this->externalid;
+    }
+
+    /**
+     * Set callerid
+     *
+     * @param integer $callerid
+     *
+     * @return Events
+     */
+    public function setCallerid($callerid)
+    {
+        $this->callerid = $callerid;
+
+        return $this;
+    }
+
+    /**
+     * Get callerid
+     *
+     * @return integer
+     */
+    public function getCallerid()
+    {
+        return $this->callerid;
+    }
+
+    /**
+     * Set patientid
+     *
+     * @param integer $patientid
+     *
+     * @return Events
+     */
+    public function setPatientid($patientid)
+    {
+        $this->patientid = $patientid;
+
+        return $this;
+    }
+
+    /**
+     * Get patientid
+     *
+     * @return integer
+     */
+    public function getPatientid()
+    {
+        return $this->patientid;
+    }
+
+    /**
+     * Get eventid
+     *
+     * @return integer
+     */
+    public function getEventid()
+    {
+        return $this->eventid;
+    }
+}

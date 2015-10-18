@@ -1,0 +1,190 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staffskills
+ *
+ * @ORM\Table(name="StaffSkills", indexes={@ORM\Index(name="StaffID", columns={"StaffID"}), @ORM\Index(name="SkillTypeID", columns={"SkillTypeID"})})
+ * @ORM\Entity
+ */
+class Staffskills
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer", nullable=false)
+     */
+    private $staffid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="SkillTypeID", type="integer", nullable=false)
+     */
+    private $skilltypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="StartDate", type="date", nullable=true)
+     */
+    private $startdate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SkillLevel", type="string", length=20, nullable=true)
+     */
+    private $skilllevel;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="YearsExperience", type="smallint", nullable=true)
+     */
+    private $yearsexperience;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffSkillID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $staffskillid;
+
+
+
+    /**
+     * Set staffid
+     *
+     * @param integer $staffid
+     *
+     * @return Staffskills
+     */
+    public function setStaffid($staffid)
+    {
+        $this->staffid = $staffid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+
+    /**
+     * Set skilltypeid
+     *
+     * @param integer $skilltypeid
+     *
+     * @return Staffskills
+     */
+    public function setSkilltypeid($skilltypeid)
+    {
+        $this->skilltypeid = $skilltypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get skilltypeid
+     *
+     * @return integer
+     */
+    public function getSkilltypeid()
+    {
+        return $this->skilltypeid;
+    }
+
+    /**
+     * Set startdate
+     *
+     * @param \DateTime $startdate
+     *
+     * @return Staffskills
+     */
+    public function setStartdate($startdate)
+    {
+        $this->startdate = $startdate;
+
+        return $this;
+    }
+
+    /**
+     * Get startdate
+     *
+     * @return \DateTime
+     */
+    public function getStartdate()
+    {
+        return $this->startdate;
+    }
+
+    /**
+     * Set skilllevel
+     *
+     * @param string $skilllevel
+     *
+     * @return Staffskills
+     */
+    public function setSkilllevel($skilllevel)
+    {
+        $this->skilllevel = $skilllevel;
+
+        return $this;
+    }
+
+    /**
+     * Get skilllevel
+     *
+     * @return string
+     */
+    public function getSkilllevel()
+    {
+        return $this->skilllevel;
+    }
+
+    /**
+     * Set yearsexperience
+     *
+     * @param integer $yearsexperience
+     *
+     * @return Staffskills
+     */
+    public function setYearsexperience($yearsexperience)
+    {
+        $this->yearsexperience = $yearsexperience;
+
+        return $this;
+    }
+
+    /**
+     * Get yearsexperience
+     *
+     * @return integer
+     */
+    public function getYearsexperience()
+    {
+        return $this->yearsexperience;
+    }
+
+    /**
+     * Get staffskillid
+     *
+     * @return integer
+     */
+    public function getStaffskillid()
+    {
+        return $this->staffskillid;
+    }
+}

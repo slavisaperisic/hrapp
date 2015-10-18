@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Busentroletypes
+ *
+ * @ORM\Table(name="BusEntRoleTypes", uniqueConstraints={@ORM\UniqueConstraint(name="BusEntRoleTypeName", columns={"BusEntRoleTypeName"})})
+ * @ORM\Entity
+ */
+class Busentroletypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="BusEntRoleTypeName", type="string", length=30, nullable=false)
+     */
+    private $busentroletypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="BusEntRoleTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $busentroletypeid;
+
+
+
+    /**
+     * Set busentroletypename
+     *
+     * @param string $busentroletypename
+     *
+     * @return Busentroletypes
+     */
+    public function setBusentroletypename($busentroletypename)
+    {
+        $this->busentroletypename = $busentroletypename;
+
+        return $this;
+    }
+
+    /**
+     * Get busentroletypename
+     *
+     * @return string
+     */
+    public function getBusentroletypename()
+    {
+        return $this->busentroletypename;
+    }
+
+    /**
+     * Get busentroletypeid
+     *
+     * @return integer
+     */
+    public function getBusentroletypeid()
+    {
+        return $this->busentroletypeid;
+    }
+}

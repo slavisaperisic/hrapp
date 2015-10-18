@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staffroletypes
+ *
+ * @ORM\Table(name="StaffRoleTypes", uniqueConstraints={@ORM\UniqueConstraint(name="StaffRoleTypeName", columns={"StaffRoleTypeName"})})
+ * @ORM\Entity
+ */
+class Staffroletypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="StaffRoleTypeName", type="string", length=50, nullable=false)
+     */
+    private $staffroletypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffRoleTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $staffroletypeid;
+
+
+
+    /**
+     * Set staffroletypename
+     *
+     * @param string $staffroletypename
+     *
+     * @return Staffroletypes
+     */
+    public function setStaffroletypename($staffroletypename)
+    {
+        $this->staffroletypename = $staffroletypename;
+
+        return $this;
+    }
+
+    /**
+     * Get staffroletypename
+     *
+     * @return string
+     */
+    public function getStaffroletypename()
+    {
+        return $this->staffroletypename;
+    }
+
+    /**
+     * Get staffroletypeid
+     *
+     * @return integer
+     */
+    public function getStaffroletypeid()
+    {
+        return $this->staffroletypeid;
+    }
+}

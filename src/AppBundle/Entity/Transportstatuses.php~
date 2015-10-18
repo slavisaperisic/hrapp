@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transportstatuses
+ *
+ * @ORM\Table(name="TransportStatuses", indexes={@ORM\Index(name="TransEvID", columns={"TransEvID"}), @ORM\Index(name="TSTypeID", columns={"TSTypeID"})})
+ * @ORM\Entity
+ */
+class Transportstatuses
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransEvID", type="integer", nullable=false)
+     */
+    private $transevid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TSTypeID", type="integer", nullable=false)
+     */
+    private $tstypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransStatID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $transstatid;
+
+
+
+    /**
+     * Set transevid
+     *
+     * @param integer $transevid
+     *
+     * @return Transportstatuses
+     */
+    public function setTransevid($transevid)
+    {
+        $this->transevid = $transevid;
+
+        return $this;
+    }
+
+    /**
+     * Get transevid
+     *
+     * @return integer
+     */
+    public function getTransevid()
+    {
+        return $this->transevid;
+    }
+
+    /**
+     * Set tstypeid
+     *
+     * @param integer $tstypeid
+     *
+     * @return Transportstatuses
+     */
+    public function setTstypeid($tstypeid)
+    {
+        $this->tstypeid = $tstypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get tstypeid
+     *
+     * @return integer
+     */
+    public function getTstypeid()
+    {
+        return $this->tstypeid;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Transportstatuses
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Transportstatuses
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get transstatid
+     *
+     * @return integer
+     */
+    public function getTransstatid()
+    {
+        return $this->transstatid;
+    }
+}

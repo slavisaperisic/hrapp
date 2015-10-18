@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Qualificationtypes
+ *
+ * @ORM\Table(name="QualificationTypes", uniqueConstraints={@ORM\UniqueConstraint(name="QualTypeName", columns={"QualTypeName"})})
+ * @ORM\Entity
+ */
+class Qualificationtypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="QualTypeName", type="string", length=30, nullable=false)
+     */
+    private $qualtypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="QualTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $qualtypeid;
+
+
+
+    /**
+     * Set qualtypename
+     *
+     * @param string $qualtypename
+     *
+     * @return Qualificationtypes
+     */
+    public function setQualtypename($qualtypename)
+    {
+        $this->qualtypename = $qualtypename;
+
+        return $this;
+    }
+
+    /**
+     * Get qualtypename
+     *
+     * @return string
+     */
+    public function getQualtypename()
+    {
+        return $this->qualtypename;
+    }
+
+    /**
+     * Get qualtypeid
+     *
+     * @return integer
+     */
+    public function getQualtypeid()
+    {
+        return $this->qualtypeid;
+    }
+}

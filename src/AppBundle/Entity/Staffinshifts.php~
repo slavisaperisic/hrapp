@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staffinshifts
+ *
+ * @ORM\Table(name="StaffInShifts", indexes={@ORM\Index(name="StaffID", columns={"StaffID"}), @ORM\Index(name="ShiftID", columns={"ShiftID"})})
+ * @ORM\Entity
+ */
+class Staffinshifts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer", nullable=false)
+     */
+    private $staffid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ShiftID", type="integer", nullable=false)
+     */
+    private $shiftid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="StartDate", type="date", nullable=false)
+     */
+    private $startdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="EndDate", type="date", nullable=true)
+     */
+    private $enddate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StShiftID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $stshiftid;
+
+
+
+    /**
+     * Set staffid
+     *
+     * @param integer $staffid
+     *
+     * @return Staffinshifts
+     */
+    public function setStaffid($staffid)
+    {
+        $this->staffid = $staffid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+
+    /**
+     * Set shiftid
+     *
+     * @param integer $shiftid
+     *
+     * @return Staffinshifts
+     */
+    public function setShiftid($shiftid)
+    {
+        $this->shiftid = $shiftid;
+
+        return $this;
+    }
+
+    /**
+     * Get shiftid
+     *
+     * @return integer
+     */
+    public function getShiftid()
+    {
+        return $this->shiftid;
+    }
+
+    /**
+     * Set startdate
+     *
+     * @param \DateTime $startdate
+     *
+     * @return Staffinshifts
+     */
+    public function setStartdate($startdate)
+    {
+        $this->startdate = $startdate;
+
+        return $this;
+    }
+
+    /**
+     * Get startdate
+     *
+     * @return \DateTime
+     */
+    public function getStartdate()
+    {
+        return $this->startdate;
+    }
+
+    /**
+     * Set enddate
+     *
+     * @param \DateTime $enddate
+     *
+     * @return Staffinshifts
+     */
+    public function setEnddate($enddate)
+    {
+        $this->enddate = $enddate;
+
+        return $this;
+    }
+
+    /**
+     * Get enddate
+     *
+     * @return \DateTime
+     */
+    public function getEnddate()
+    {
+        return $this->enddate;
+    }
+
+    /**
+     * Get stshiftid
+     *
+     * @return integer
+     */
+    public function getStshiftid()
+    {
+        return $this->stshiftid;
+    }
+}

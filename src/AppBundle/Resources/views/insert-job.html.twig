@@ -1,0 +1,27 @@
+{% extends '@templatedir/master.html.twig' %}
+
+{% block content %}
+
+<h2>Post New Job</h2>
+
+<form role="form">
+    <div class="form-group">
+        <label for="job_title">Job Title:</label>
+        <input type="text" class="form-control" id="job_title">
+    </div>
+    <div class="form-group">
+        <label for="job_email">Email address:</label>
+        <input type="email" class="form-control" id="job_email">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" id="job_description" cols="30" rows="10"></textarea>
+    </div>
+    <button type="button" class="btn btn-default submit-job">Submit</button>
+</form>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset("hr/js/actions.js") }}"></script>
+{% endblock %}

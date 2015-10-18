@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Slavisa Perisic">
+
+    <title>HR app | Home</title>
+
+    {% block styles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset("hr/css/style.css") }}">
+    {% endblock %}
+
+</head>
+
+<body>
+<div id="wrap">
+    <div class="container">
+        <div class="row">
+            <header>Welcome to HR app</header>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-3 sidebar">
+                <ul>
+                    <li><a href="{{ path("homepage") }}">Job Submission</a></li>
+                    <li><a href="{{ path("list_jobs") }}">Job List</a></li>
+                    <li><a href="{{ path("fos_user_security_logout") }}">Logout</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-9 main">
+                <div class="content">
+
+                    {% block content %}
+
+                    {% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="{{ asset("hr/js/script.js") }}"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Eventtypes
+ *
+ * @ORM\Table(name="EventTypes", uniqueConstraints={@ORM\UniqueConstraint(name="EventTypeName", columns={"EventTypeName"})})
+ * @ORM\Entity
+ */
+class Eventtypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EventTypeName", type="string", length=30, nullable=false)
+     */
+    private $eventtypename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EventTypeDesc", type="string", length=255, nullable=true)
+     */
+    private $eventtypedesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="EventTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $eventtypeid;
+
+
+
+    /**
+     * Set eventtypename
+     *
+     * @param string $eventtypename
+     *
+     * @return Eventtypes
+     */
+    public function setEventtypename($eventtypename)
+    {
+        $this->eventtypename = $eventtypename;
+
+        return $this;
+    }
+
+    /**
+     * Get eventtypename
+     *
+     * @return string
+     */
+    public function getEventtypename()
+    {
+        return $this->eventtypename;
+    }
+
+    /**
+     * Set eventtypedesc
+     *
+     * @param string $eventtypedesc
+     *
+     * @return Eventtypes
+     */
+    public function setEventtypedesc($eventtypedesc)
+    {
+        $this->eventtypedesc = $eventtypedesc;
+
+        return $this;
+    }
+
+    /**
+     * Get eventtypedesc
+     *
+     * @return string
+     */
+    public function getEventtypedesc()
+    {
+        return $this->eventtypedesc;
+    }
+
+    /**
+     * Get eventtypeid
+     *
+     * @return integer
+     */
+    public function getEventtypeid()
+    {
+        return $this->eventtypeid;
+    }
+}

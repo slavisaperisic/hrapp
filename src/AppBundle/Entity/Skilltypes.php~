@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Skilltypes
+ *
+ * @ORM\Table(name="SkillTypes", uniqueConstraints={@ORM\UniqueConstraint(name="SkillTypeName", columns={"SkillTypeName"})})
+ * @ORM\Entity
+ */
+class Skilltypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SkillTypeName", type="string", length=50, nullable=false)
+     */
+    private $skilltypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="SkillTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $skilltypeid;
+
+
+
+    /**
+     * Set skilltypename
+     *
+     * @param string $skilltypename
+     *
+     * @return Skilltypes
+     */
+    public function setSkilltypename($skilltypename)
+    {
+        $this->skilltypename = $skilltypename;
+
+        return $this;
+    }
+
+    /**
+     * Get skilltypename
+     *
+     * @return string
+     */
+    public function getSkilltypename()
+    {
+        return $this->skilltypename;
+    }
+
+    /**
+     * Get skilltypeid
+     *
+     * @return integer
+     */
+    public function getSkilltypeid()
+    {
+        return $this->skilltypeid;
+    }
+}

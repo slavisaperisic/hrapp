@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contdatatypes
+ *
+ * @ORM\Table(name="ContDataTypes", uniqueConstraints={@ORM\UniqueConstraint(name="ContDataTypeName", columns={"ContDataTypeName"})})
+ * @ORM\Entity
+ */
+class Contdatatypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ContDataTypeName", type="string", length=30, nullable=false)
+     */
+    private $contdatatypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ContDataTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $contdatatypeid;
+
+
+
+    /**
+     * Set contdatatypename
+     *
+     * @param string $contdatatypename
+     *
+     * @return Contdatatypes
+     */
+    public function setContdatatypename($contdatatypename)
+    {
+        $this->contdatatypename = $contdatatypename;
+
+        return $this;
+    }
+
+    /**
+     * Get contdatatypename
+     *
+     * @return string
+     */
+    public function getContdatatypename()
+    {
+        return $this->contdatatypename;
+    }
+
+    /**
+     * Get contdatatypeid
+     *
+     * @return integer
+     */
+    public function getContdatatypeid()
+    {
+        return $this->contdatatypeid;
+    }
+}

@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staff
+ *
+ * @ORM\Table(name="Staff", indexes={@ORM\Index(name="StationID", columns={"StationID"})})
+ * @ORM\Entity
+ */
+class Staff
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FirstName", type="string", length=50, nullable=true)
+     */
+    private $firstname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MidName", type="string", length=50, nullable=true)
+     */
+    private $midname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LastName", type="string", length=50, nullable=true)
+     */
+    private $lastname;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StationID", type="integer", nullable=false)
+     */
+    private $stationid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $staffid;
+
+
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return Staff
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set midname
+     *
+     * @param string $midname
+     *
+     * @return Staff
+     */
+    public function setMidname($midname)
+    {
+        $this->midname = $midname;
+
+        return $this;
+    }
+
+    /**
+     * Get midname
+     *
+     * @return string
+     */
+    public function getMidname()
+    {
+        return $this->midname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     *
+     * @return Staff
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set stationid
+     *
+     * @param integer $stationid
+     *
+     * @return Staff
+     */
+    public function setStationid($stationid)
+    {
+        $this->stationid = $stationid;
+
+        return $this;
+    }
+
+    /**
+     * Get stationid
+     *
+     * @return integer
+     */
+    public function getStationid()
+    {
+        return $this->stationid;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+}

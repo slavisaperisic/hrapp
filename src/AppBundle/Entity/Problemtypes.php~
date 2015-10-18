@@ -1,0 +1,97 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Problemtypes
+ *
+ * @ORM\Table(name="ProblemTypes", uniqueConstraints={@ORM\UniqueConstraint(name="ProblemTypeName", columns={"ProblemTypeName"})})
+ * @ORM\Entity
+ */
+class Problemtypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProblemTypeName", type="string", length=100, nullable=false)
+     */
+    private $problemtypename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProblemTypeDesc", type="string", length=255, nullable=true)
+     */
+    private $problemtypedesc;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ProblemTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $problemtypeid;
+
+
+
+    /**
+     * Set problemtypename
+     *
+     * @param string $problemtypename
+     *
+     * @return Problemtypes
+     */
+    public function setProblemtypename($problemtypename)
+    {
+        $this->problemtypename = $problemtypename;
+
+        return $this;
+    }
+
+    /**
+     * Get problemtypename
+     *
+     * @return string
+     */
+    public function getProblemtypename()
+    {
+        return $this->problemtypename;
+    }
+
+    /**
+     * Set problemtypedesc
+     *
+     * @param string $problemtypedesc
+     *
+     * @return Problemtypes
+     */
+    public function setProblemtypedesc($problemtypedesc)
+    {
+        $this->problemtypedesc = $problemtypedesc;
+
+        return $this;
+    }
+
+    /**
+     * Get problemtypedesc
+     *
+     * @return string
+     */
+    public function getProblemtypedesc()
+    {
+        return $this->problemtypedesc;
+    }
+
+    /**
+     * Get problemtypeid
+     *
+     * @return integer
+     */
+    public function getProblemtypeid()
+    {
+        return $this->problemtypeid;
+    }
+}

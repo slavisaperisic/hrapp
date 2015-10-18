@@ -1,0 +1,500 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contactdata
+ *
+ * @ORM\Table(name="ContactData", indexes={@ORM\Index(name="ContDataTypeID", columns={"ContDataTypeID"})})
+ * @ORM\Entity
+ */
+class Contactdata
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ContDataTypeID", type="integer", nullable=false)
+     */
+    private $contdatatypeid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CountryCode", type="string", length=4, nullable=true)
+     */
+    private $countrycode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NetNum", type="string", length=6, nullable=true)
+     */
+    private $netnum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PhoneNbr", type="string", length=20, nullable=true)
+     */
+    private $phonenbr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ElecAddrStr", type="string", length=100, nullable=true)
+     */
+    private $elecaddrstr;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Address", type="string", length=100, nullable=true)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Street", type="string", length=60, nullable=true)
+     */
+    private $street;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="StreetNum", type="string", length=10, nullable=true)
+     */
+    private $streetnum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EntryNum", type="string", length=10, nullable=true)
+     */
+    private $entrynum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FloorNum", type="string", length=10, nullable=true)
+     */
+    private $floornum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ApartmentNum", type="string", length=10, nullable=true)
+     */
+    private $apartmentnum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AddressDesc", type="string", length=255, nullable=true)
+     */
+    private $addressdesc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Country", type="string", length=50, nullable=true)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="City", type="string", length=50, nullable=true)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PostalCode", type="string", length=10, nullable=true)
+     */
+    private $postalcode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ContDataID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $contdataid;
+
+
+
+    /**
+     * Set contdatatypeid
+     *
+     * @param integer $contdatatypeid
+     *
+     * @return Contactdata
+     */
+    public function setContdatatypeid($contdatatypeid)
+    {
+        $this->contdatatypeid = $contdatatypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get contdatatypeid
+     *
+     * @return integer
+     */
+    public function getContdatatypeid()
+    {
+        return $this->contdatatypeid;
+    }
+
+    /**
+     * Set countrycode
+     *
+     * @param string $countrycode
+     *
+     * @return Contactdata
+     */
+    public function setCountrycode($countrycode)
+    {
+        $this->countrycode = $countrycode;
+
+        return $this;
+    }
+
+    /**
+     * Get countrycode
+     *
+     * @return string
+     */
+    public function getCountrycode()
+    {
+        return $this->countrycode;
+    }
+
+    /**
+     * Set netnum
+     *
+     * @param string $netnum
+     *
+     * @return Contactdata
+     */
+    public function setNetnum($netnum)
+    {
+        $this->netnum = $netnum;
+
+        return $this;
+    }
+
+    /**
+     * Get netnum
+     *
+     * @return string
+     */
+    public function getNetnum()
+    {
+        return $this->netnum;
+    }
+
+    /**
+     * Set phonenbr
+     *
+     * @param string $phonenbr
+     *
+     * @return Contactdata
+     */
+    public function setPhonenbr($phonenbr)
+    {
+        $this->phonenbr = $phonenbr;
+
+        return $this;
+    }
+
+    /**
+     * Get phonenbr
+     *
+     * @return string
+     */
+    public function getPhonenbr()
+    {
+        return $this->phonenbr;
+    }
+
+    /**
+     * Set elecaddrstr
+     *
+     * @param string $elecaddrstr
+     *
+     * @return Contactdata
+     */
+    public function setElecaddrstr($elecaddrstr)
+    {
+        $this->elecaddrstr = $elecaddrstr;
+
+        return $this;
+    }
+
+    /**
+     * Get elecaddrstr
+     *
+     * @return string
+     */
+    public function getElecaddrstr()
+    {
+        return $this->elecaddrstr;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return Contactdata
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set street
+     *
+     * @param string $street
+     *
+     * @return Contactdata
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+
+        return $this;
+    }
+
+    /**
+     * Get street
+     *
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Set streetnum
+     *
+     * @param string $streetnum
+     *
+     * @return Contactdata
+     */
+    public function setStreetnum($streetnum)
+    {
+        $this->streetnum = $streetnum;
+
+        return $this;
+    }
+
+    /**
+     * Get streetnum
+     *
+     * @return string
+     */
+    public function getStreetnum()
+    {
+        return $this->streetnum;
+    }
+
+    /**
+     * Set entrynum
+     *
+     * @param string $entrynum
+     *
+     * @return Contactdata
+     */
+    public function setEntrynum($entrynum)
+    {
+        $this->entrynum = $entrynum;
+
+        return $this;
+    }
+
+    /**
+     * Get entrynum
+     *
+     * @return string
+     */
+    public function getEntrynum()
+    {
+        return $this->entrynum;
+    }
+
+    /**
+     * Set floornum
+     *
+     * @param string $floornum
+     *
+     * @return Contactdata
+     */
+    public function setFloornum($floornum)
+    {
+        $this->floornum = $floornum;
+
+        return $this;
+    }
+
+    /**
+     * Get floornum
+     *
+     * @return string
+     */
+    public function getFloornum()
+    {
+        return $this->floornum;
+    }
+
+    /**
+     * Set apartmentnum
+     *
+     * @param string $apartmentnum
+     *
+     * @return Contactdata
+     */
+    public function setApartmentnum($apartmentnum)
+    {
+        $this->apartmentnum = $apartmentnum;
+
+        return $this;
+    }
+
+    /**
+     * Get apartmentnum
+     *
+     * @return string
+     */
+    public function getApartmentnum()
+    {
+        return $this->apartmentnum;
+    }
+
+    /**
+     * Set addressdesc
+     *
+     * @param string $addressdesc
+     *
+     * @return Contactdata
+     */
+    public function setAddressdesc($addressdesc)
+    {
+        $this->addressdesc = $addressdesc;
+
+        return $this;
+    }
+
+    /**
+     * Get addressdesc
+     *
+     * @return string
+     */
+    public function getAddressdesc()
+    {
+        return $this->addressdesc;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return Contactdata
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return Contactdata
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set postalcode
+     *
+     * @param string $postalcode
+     *
+     * @return Contactdata
+     */
+    public function setPostalcode($postalcode)
+    {
+        $this->postalcode = $postalcode;
+
+        return $this;
+    }
+
+    /**
+     * Get postalcode
+     *
+     * @return string
+     */
+    public function getPostalcode()
+    {
+        return $this->postalcode;
+    }
+
+    /**
+     * Get contdataid
+     *
+     * @return integer
+     */
+    public function getContdataid()
+    {
+        return $this->contdataid;
+    }
+}

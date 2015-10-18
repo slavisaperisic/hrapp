@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transunittypes
+ *
+ * @ORM\Table(name="TransUnitTypes", uniqueConstraints={@ORM\UniqueConstraint(name="TransUnitTypeName", columns={"TransUnitTypeName"})})
+ * @ORM\Entity
+ */
+class Transunittypes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TransUnitTypeName", type="string", length=30, nullable=false)
+     */
+    private $transunittypename;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransUnitTypeID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $transunittypeid;
+
+
+
+    /**
+     * Set transunittypename
+     *
+     * @param string $transunittypename
+     *
+     * @return Transunittypes
+     */
+    public function setTransunittypename($transunittypename)
+    {
+        $this->transunittypename = $transunittypename;
+
+        return $this;
+    }
+
+    /**
+     * Get transunittypename
+     *
+     * @return string
+     */
+    public function getTransunittypename()
+    {
+        return $this->transunittypename;
+    }
+
+    /**
+     * Get transunittypeid
+     *
+     * @return integer
+     */
+    public function getTransunittypeid()
+    {
+        return $this->transunittypeid;
+    }
+}

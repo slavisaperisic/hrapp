@@ -1,0 +1,190 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staffqualifications
+ *
+ * @ORM\Table(name="StaffQualifications", indexes={@ORM\Index(name="StaffID", columns={"StaffID"}), @ORM\Index(name="QualTypeID", columns={"QualTypeID"})})
+ * @ORM\Entity
+ */
+class Staffqualifications
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="QualTypeID", type="integer", nullable=false)
+     */
+    private $qualtypeid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer", nullable=false)
+     */
+    private $staffid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DegreeCertification", type="string", length=1, nullable=false)
+     */
+    private $degreecertification;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=true)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffQualID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $staffqualid;
+
+
+
+    /**
+     * Set qualtypeid
+     *
+     * @param integer $qualtypeid
+     *
+     * @return Staffqualifications
+     */
+    public function setQualtypeid($qualtypeid)
+    {
+        $this->qualtypeid = $qualtypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get qualtypeid
+     *
+     * @return integer
+     */
+    public function getQualtypeid()
+    {
+        return $this->qualtypeid;
+    }
+
+    /**
+     * Set staffid
+     *
+     * @param integer $staffid
+     *
+     * @return Staffqualifications
+     */
+    public function setStaffid($staffid)
+    {
+        $this->staffid = $staffid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+
+    /**
+     * Set degreecertification
+     *
+     * @param string $degreecertification
+     *
+     * @return Staffqualifications
+     */
+    public function setDegreecertification($degreecertification)
+    {
+        $this->degreecertification = $degreecertification;
+
+        return $this;
+    }
+
+    /**
+     * Get degreecertification
+     *
+     * @return string
+     */
+    public function getDegreecertification()
+    {
+        return $this->degreecertification;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Staffqualifications
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Staffqualifications
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get staffqualid
+     *
+     * @return integer
+     */
+    public function getStaffqualid()
+    {
+        return $this->staffqualid;
+    }
+}

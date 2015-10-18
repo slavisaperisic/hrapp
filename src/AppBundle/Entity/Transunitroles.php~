@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transunitroles
+ *
+ * @ORM\Table(name="TransUnitRoles", indexes={@ORM\Index(name="TransUnitID", columns={"TransUnitID"}), @ORM\Index(name="TransUnitTypeID", columns={"TransUnitTypeID"})})
+ * @ORM\Entity
+ */
+class Transunitroles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransUnitID", type="integer", nullable=false)
+     */
+    private $transunitid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TransUnitTypeID", type="integer", nullable=false)
+     */
+    private $transunittypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TrUnRoleID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $trunroleid;
+
+
+
+    /**
+     * Set transunitid
+     *
+     * @param integer $transunitid
+     *
+     * @return Transunitroles
+     */
+    public function setTransunitid($transunitid)
+    {
+        $this->transunitid = $transunitid;
+
+        return $this;
+    }
+
+    /**
+     * Get transunitid
+     *
+     * @return integer
+     */
+    public function getTransunitid()
+    {
+        return $this->transunitid;
+    }
+
+    /**
+     * Set transunittypeid
+     *
+     * @param integer $transunittypeid
+     *
+     * @return Transunitroles
+     */
+    public function setTransunittypeid($transunittypeid)
+    {
+        $this->transunittypeid = $transunittypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get transunittypeid
+     *
+     * @return integer
+     */
+    public function getTransunittypeid()
+    {
+        return $this->transunittypeid;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Transunitroles
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Transunitroles
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get trunroleid
+     *
+     * @return integer
+     */
+    public function getTrunroleid()
+    {
+        return $this->trunroleid;
+    }
+}

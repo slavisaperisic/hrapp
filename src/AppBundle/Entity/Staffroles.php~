@@ -1,0 +1,159 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Staffroles
+ *
+ * @ORM\Table(name="StaffRoles", indexes={@ORM\Index(name="StaffID", columns={"StaffID"}), @ORM\Index(name="StaffRoleTypeID", columns={"StaffRoleTypeID"})})
+ * @ORM\Entity
+ */
+class Staffroles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffID", type="integer", nullable=false)
+     */
+    private $staffid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffRoleTypeID", type="integer", nullable=false)
+     */
+    private $staffroletypeid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FromDate", type="date", nullable=false)
+     */
+    private $fromdate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ToDate", type="date", nullable=true)
+     */
+    private $todate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="StaffRoleID", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $staffroleid;
+
+
+
+    /**
+     * Set staffid
+     *
+     * @param integer $staffid
+     *
+     * @return Staffroles
+     */
+    public function setStaffid($staffid)
+    {
+        $this->staffid = $staffid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffid
+     *
+     * @return integer
+     */
+    public function getStaffid()
+    {
+        return $this->staffid;
+    }
+
+    /**
+     * Set staffroletypeid
+     *
+     * @param integer $staffroletypeid
+     *
+     * @return Staffroles
+     */
+    public function setStaffroletypeid($staffroletypeid)
+    {
+        $this->staffroletypeid = $staffroletypeid;
+
+        return $this;
+    }
+
+    /**
+     * Get staffroletypeid
+     *
+     * @return integer
+     */
+    public function getStaffroletypeid()
+    {
+        return $this->staffroletypeid;
+    }
+
+    /**
+     * Set fromdate
+     *
+     * @param \DateTime $fromdate
+     *
+     * @return Staffroles
+     */
+    public function setFromdate($fromdate)
+    {
+        $this->fromdate = $fromdate;
+
+        return $this;
+    }
+
+    /**
+     * Get fromdate
+     *
+     * @return \DateTime
+     */
+    public function getFromdate()
+    {
+        return $this->fromdate;
+    }
+
+    /**
+     * Set todate
+     *
+     * @param \DateTime $todate
+     *
+     * @return Staffroles
+     */
+    public function setTodate($todate)
+    {
+        $this->todate = $todate;
+
+        return $this;
+    }
+
+    /**
+     * Get todate
+     *
+     * @return \DateTime
+     */
+    public function getTodate()
+    {
+        return $this->todate;
+    }
+
+    /**
+     * Get staffroleid
+     *
+     * @return integer
+     */
+    public function getStaffroleid()
+    {
+        return $this->staffroleid;
+    }
+}
